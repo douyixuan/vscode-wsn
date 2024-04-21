@@ -1,24 +1,24 @@
 {
-	"scopeName": "markdown.ebnf.codeblock",
+	"scopeName": "markdown.wsn.codeblock",
 	"fileTypes": [],
 	"injectionSelector": "L:markup.fenced_code.block.markdown",
 	"patterns": [
 		{
-			"include": "#ebnf-code-block"
+			"include": "#wsn-code-block"
 		}
 	],
 	"repository": {
-		"ebnf-code-block": {
-			"begin": "(?<=[`~])ebnf(\\s+[^`~]*)?$",
+		"wsn-code-block": {
+			"begin": "(?<=[`~])wsn(\\s+[^`~]*)?$",
 			"end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
 			"patterns": [
 				{
 					"begin": "(^|\\G)(\\s*)(.*)",
 					"while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)",
-					"contentName": "meta.embedded.block.ebnf",
+					"contentName": "meta.embedded.block.wsn",
 					"patterns": [
 						{
-							"include": "text.ebnf"
+							"include": "text.wsn"
 						}
 					]
 				}
