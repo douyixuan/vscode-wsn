@@ -1,31 +1,31 @@
 {
-	"name": "EBNF",
-	"scopeName": "text.ebnf",
+	"name": "WSN",
+	"scopeName": "text.wsn",
 	"patterns": [
 		{ "include": "#comment" },
 		{ "include": "#rule" }
 	],
 	"repository": {
 		"comment": {
-			"name": "comment.block.ebnf",
+			"name": "comment.block.wsn",
 			"begin": "\\(\\*",
 			"end": "\\*\\)",
 			"patterns": [
 				{
-					"name": "keyword.other.ebnf",
+					"name": "keyword.other.wsn",
 					"match": "\\b(TODO|FIXME)\\b"
 				}
 			]
 		},
 		"rule": {
 			"begin": "([a-zA-Z_][a-zA-Z0-9_ ]*)\\s*(=)",
-			"end": "(;)",
+			"end": "(.)",
 			"beginCaptures": {
-				"1": { "name": "entity.name.class.ebnf" },
-				"2": { "name": "keyword.other.ebnf" }
+				"1": { "name": "entity.name.class.wsn" },
+				"2": { "name": "keyword.other.wsn" }
 			},
 			"endCaptures": {
-				"1": { "name": "keyword.other.ebnf" }
+				"1": { "name": "keyword.other.wsn" }
 			},
 			"patterns": [
 				{ "include": "#comment" },
@@ -37,39 +37,39 @@
 		"symbol": {
 			"patterns": [
 				{
-					"name": "support.variable.ebnf",
+					"name": "support.variable.wsn",
 					"match": "\\b[A-Z][A-Z0-9_]*\\b"
 				},
 				{
-					"name": "entity.name.class.ebnf",
+					"name": "entity.name.class.wsn",
 					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
 				}
 			]
 		},
 		"operator": {
-			"name": "keyword.control.ebnf",
-			"match": "[,|\\[\\]{}()*?-]"
+			"name": "keyword.control.wsn",
+			"match": "[\\[\\]{}()*?-]"
 		},
 		"string": {
 			"patterns": [
 				{
-					"name": "string.quoted.single.ebnf",
+					"name": "string.quoted.single.wsn",
 					"begin": "'",
 					"end": "'",
 					"patterns": [
 						{
-							"name": "constant.character.escape.ebnf",
+							"name": "constant.character.escape.wsn",
 							"match": "\\\\."
 						}
 					]
 				},
 				{
-					"name": "string.quoted.double.ebnf",
+					"name": "string.quoted.double.wsn",
 					"begin": "\"",
 					"end": "\"",
 					"patterns": [
 						{
-							"name": "constant.character.escape.ebnf",
+							"name": "constant.character.escape.wsn",
 							"match": "\\\\."
 						}
 					]
